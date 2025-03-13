@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: hulj7skbp-go
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: hulj7skbp-go 
+  name: hulj7skbp-go
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: hulj7skbp-go
+    weight: 100 
